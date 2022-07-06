@@ -1,0 +1,75 @@
+@import '../../scss/variables';
+@import '../../scss/responsive';
+
+.about {
+    height: 650px;
+    margin-top: 40px;
+
+    @include mobile {
+        height: 650px;
+    }
+
+    &-container {
+        width: $container-width;
+        height: $container-height;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        &__info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-weight: 400;
+            padding-top: 50px;
+
+            @include mobile {
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 20px;
+
+                @include mobile {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            &_wrapper {
+                height: 80%;
+                z-index: 1000;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: $powder-blue;
+                box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+
+                @include mobile {
+                    height: 140px;
+                }
+
+                img {
+                    height: 110%;
+
+                    @include mobile {
+                        height: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

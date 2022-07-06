@@ -1,0 +1,89 @@
+@import '../../scss/responsive';
+
+.contact {
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        .form-wrapper {
+            height: 70%;
+            width: 50%;
+
+            @include mobile {
+                width: 85%;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                margin-top: 35px;
+
+                input,
+                textarea {
+                    margin-bottom: 20px;
+                    padding: 10px 20px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                textarea {
+                    height: 150px;
+                    resize: none;
+                }
+
+                button {
+                    width: 40%;
+                    align-self: center;
+                    padding: 10px 40px;
+                    text-transform: uppercase;
+                    border-radius: 5px;
+                    border: 1px solid rgb(193, 193, 193);
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+
+                button.dark {
+                    background-color: #333;
+                    color: #ddd;
+                    transition: all .2s ease-in;
+                    &:hover {
+                        background-color: #ddd;
+                        color: #333;
+                        transition: all .2s ease-in;
+                    }
+                }
+
+                button.light {
+                    background-color: #ddd;
+                    color: #333;
+                    transition: all .2s ease-in;
+                    &:hover {
+                        background-color: #333;
+                        color: #ddd;
+                        transition: all .2s ease-in;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import './normalize';
+@import './variables';
+@import './utilities';
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    // background-color: $prussian-blue;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888888;
+    border-radius: 4px;
+    min-height: 10px;
+}
+

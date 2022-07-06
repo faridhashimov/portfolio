@@ -1,0 +1,93 @@
+@import '../../scss/variables';
+@import '../../scss/responsive';
+
+.skills {
+    height: 650px;
+
+    &-container {
+        width: $container-width;
+        height: $container-height;
+        margin: 0 auto;
+        padding: 40px 20px;
+        margin-top: 40px;
+        transition: $transition;
+        border-radius: 10px;
+        // box-shadow: 0px 0px 30px 1px $celadon-blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__title {
+            text-align: center;
+            font-size: 32px;
+
+            @include mobile {
+                font-size: 18px;
+            }
+        }
+
+        &__list {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: flex-start;
+            gap: 10px;
+            float: right;
+            margin-right: 20px;
+
+            @include mobile {
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+                margin-right: 0px;
+                padding: 15px 0px 0px 45px;
+            }
+
+            li {
+                position: relative;
+                font-size: 20px;
+
+                @include mobile {
+                    font-size: 14px;
+                }
+
+                &::before {
+                    content: '▹';
+                    position: absolute;
+                    left: -20px;
+                    color: #2DD4BF;
+                }
+            }
+        }
+
+        &__logos {
+            margin: 50px 0px;
+
+            &_wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include mobile {
+                    flex-wrap: wrap;
+                    gap: 12px;
+                }
+
+                li {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0px 12px;
+
+                    i {
+                        font-size: 55px;
+
+                        @include mobile {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
