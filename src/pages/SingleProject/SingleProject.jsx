@@ -1,6 +1,42 @@
+import { useCallback, useEffect, useState } from 'react'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+
+import { Contact, Footer } from '../../components'
 import './SingleProject.scss'
+import { project } from '../../data'
 
 const SingleProject = () => {
+    const [slideIndex, setSlideIndex] = useState(0)
+
+    const handleClick = useCallback(
+        (direction) => {
+            if (direction === 'left') {
+                setSlideIndex(
+                    slideIndex > 0 ? slideIndex - 1 : project.length - 1
+                )
+            } else {
+                setSlideIndex(
+                    slideIndex < project.length - 1 ? slideIndex + 1 : 0
+                )
+            }
+        },
+        [slideIndex]
+    )
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    useEffect(() => {
+        const infiniteSlider = setInterval(() => handleClick('right'), 3000)
+
+        return () => {
+            clearInterval(infiniteSlider)
+        }
+    }, [handleClick])
+
+    console.log(slideIndex)
+
     return (
         <div className="sProject">
             <div className="sProject-container">
@@ -10,14 +46,72 @@ const SingleProject = () => {
                     </a>
                 </nav>
                 <main className="project">
-                    <h3 className="project-title">Ecommerce</h3>
+                    <h3 className="project-title">e-Commerce Store</h3>
                     <div className="project-images">
-                        <div className="project-images__wrapper">
-                            
+                        <div
+                            onClick={() => handleClick('left')}
+                            className="project-images__left"
+                        >
+                            <FaChevronLeft />
                         </div>
+                        <div
+                            onClick={() => handleClick('right')}
+                            className="project-images__right"
+                        >
+                            <FaChevronRight />
+                        </div>
+                        <div className="project-images__container">
+                            <div
+                                style={{
+                                    width: `${project.length * 896}px`,
+                                    transform: `translateX(${
+                                        slideIndex * -896
+                                    }px)`,
+                                }}
+                                className="image-wrapper"
+                            >
+                                {project.map((item) => (
+                                    <div key={item.id}>
+                                        <img
+                                            src={item.img}
+                                            alt={`img${item.id}`}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="dots">
+                            {project.map((item) => (
+                                <div
+                                    onClick={() => setSlideIndex(item.id)}
+                                    style={{
+                                        backgroundColor:
+                                            slideIndex === item.id
+                                                ? '#232323'
+                                                : '#ccc',
+                                    }}
+                                    key={item.id}
+                                    className="dot"
+                                ></div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="project-desc">
+                        <p>
+                            e-Commerce Store that i built in React and styled
+                            with <strong>Styled Components</strong>. It's a
+                            fully responsive modern e-Commerse website, with
+                            PayPal payment. Alson a website fetch all data from
+                            Backend which I built using{' '}
+                            <strong>Express.js</strong>, which is an amazing{' '}
+                            <strong>Node.js </strong>
+                            framework.
+                        </p>
                     </div>
                 </main>
             </div>
+            <Contact />
+            <Footer />
         </div>
     )
 }
