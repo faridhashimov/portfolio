@@ -9,7 +9,7 @@
         height: 650px;
     }
 
-    &-container {
+    &__container {
         width: $container-width;
         height: $container-height;
         margin: 0 auto;
@@ -20,36 +20,70 @@
             flex-direction: column;
         }
 
-        &__info {
-            flex: 1;
+       .about__info {
+            flex: 2;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             font-weight: 400;
-            padding-top: 50px;
+            padding: 50px 20px 0 0;
 
             @include mobile {
                 margin-bottom: 20px;
             }
 
-            p {
+            &--desc {
                 font-size: 20px;
+                
 
                 @include mobile {
                     font-size: 16px;
                 }
             }
+
+            &--contacts {
+                background: no-repeat url('https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B1360%2C893%5D&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F23%2F2021%2F07%2F13%2Fcalming-workspace-at-office-2000.jpg') center center / cover;
+                height: 180px;
+                margin-top: 15px;
+                border-radius: 10px;
+                box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+                position: relative;
+
+                .contacts__container {
+                    position: absolute;
+                    bottom: -35px;
+                    left: 25%;
+                    height: 70px;
+                    width: 50%;
+                    background-color: rgba(168, 218, 220, 0.7);
+                    box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    color: #1d3557;
+
+                    span {
+                        font-weight: 600;
+                    }
+                }
+
+
+            }
         }
 
-        &__img {
+        .myImage {
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            padding-top: 120px;
             position: relative;
 
-            &_wrapper {
-                height: 80%;
+            &__wrapper {
+                height: 60%;
                 z-index: 1000;
                 border-radius: 10px;
                 overflow: hidden;

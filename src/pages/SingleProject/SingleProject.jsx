@@ -39,28 +39,28 @@ const SingleProject = () => {
 
     return (
         <div className="sProject">
-            <div className="sProject-container">
+            <div className="sProject__container">
                 <nav className="header">
                     <a href="/" className="header__logo">
                         fh
                     </a>
                 </nav>
                 <main className="project">
-                    <h3 className="project-title">e-Commerce Store</h3>
-                    <div className="project-images">
+                    <h3 className="project__title">e-Commerce Store</h3>
+                    <div className="project__images">
                         <div
                             onClick={() => handleClick('left')}
-                            className="project-images__left"
+                            className="project__images--leftArrow"
                         >
                             <FaChevronLeft />
                         </div>
                         <div
                             onClick={() => handleClick('right')}
-                            className="project-images__right"
+                            className="project__images--rightArrow"
                         >
                             <FaChevronRight />
                         </div>
-                        <div className="project-images__container">
+                        <div className="project__images--container">
                             <div
                                 style={{
                                     width: `${project.length * 896}px`,
@@ -68,7 +68,7 @@ const SingleProject = () => {
                                         slideIndex * -896
                                     }px)`,
                                 }}
-                                className="image-wrapper"
+                                className="imageWrapper"
                             >
                                 {project.map((item) => (
                                     <div key={item.id}>
@@ -96,12 +96,12 @@ const SingleProject = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="project-desc">
+                    <div className="project__desc">
                         <p>
                             e-Commerce Store that i built in React and styled
                             with <strong>Styled Components</strong>. It's a
                             fully responsive modern e-Commerse website, with
-                            PayPal payment. Alson a website fetch all data from
+                            PayPal payment. Also a website fetch all data from
                             Backend which I built using{' '}
                             <strong>Express.js</strong>, which is an amazing{' '}
                             <strong>Node.js </strong>
