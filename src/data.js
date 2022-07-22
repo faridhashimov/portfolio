@@ -10,7 +10,7 @@ export const projects = [
         mainImg: '',
     },
 ]
-export const project = [
+export const images = [
     {
         id: 0,
         img: 'https://firebasestorage.googleapis.com/v0/b/my-portfolio-216d9.appspot.com/o/ecommerce-website%2F1.JPG?alt=media&token=413a3eee-098e-44c5-a7b8-eb3eeaa2ee5d',

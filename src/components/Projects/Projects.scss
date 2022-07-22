@@ -15,6 +15,17 @@
         justify-content: flex-start;
         align-items: center;
 
+        .errorMsg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+
+            p {
+                color: red;
+            }
+        }
+
         p {
             color: #A8DADC;
             font-size: 22px;
@@ -26,6 +37,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 40px;
+
             @include mobile {
                 gap: 20px;
             }
@@ -35,10 +47,19 @@
             }
 
             .item-wrapper {
-                height: 60vh;
+                height: 370px;
                 margin-bottom: 40px;
+
+                &:nth-child(3) {
+                    height: 363px;  
+                }
+
                 @include mobile {
                     margin-bottom: 15px;
+                    height: 45vh;
+                }
+
+                @include monitor {
                     height: 45vh;
                 }
 
@@ -61,18 +82,27 @@
                         justify-content: center;
                         align-items: center;
 
-                        svg {
-                            font-size: 25px;
-                            cursor: pointer;
+                        a {
+                            color: inherit;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        a:first-child {
+                            margin-right: 20px;
+
                             @include mobile {
-                                font-size: 20px;
+                                margin-right: 10px;
                             }
                         }
 
-                        svg:first-child {
-                            margin-right: 20px;
+                        svg {
+                            font-size: 25px;
+                            cursor: pointer;
+
                             @include mobile {
-                                margin-right: 10px;
+                                font-size: 20px;
                             }
                         }
                     }

@@ -57,7 +57,10 @@ const Navbar = () => {
                             borderColor: darkMode ? 'white' : '#A8DADC',
                         }}
                         className="resume"
-                        href="https://google.ru"
+                        target="_blank"
+                        rel="noreferrer"
+                        // download
+                        href={process.env.PUBLIC_URL + '/Resume.pdf'}
                     >
                         Resume
                     </a>
