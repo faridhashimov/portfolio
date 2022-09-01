@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="footer-container">
                 <ul className="footer-container__social">
                     <li>
-                        <StyledLink link={'https://twitter.com'}>
+                        <StyledLink link={'https://twitter.com/farid_codes?t=eTTwzxxjX0Vc1tdc-wczpg&s=09'}>
                             <FaTwitter color="#1DA1F2" />
                         </StyledLink>
                     </li>
