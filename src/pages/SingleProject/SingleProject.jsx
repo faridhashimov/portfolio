@@ -50,7 +50,6 @@ const SingleProject = () => {
         return <div dangerouslySetInnerHTML={{ __html: project.desc }} />
     }
 
-    console.log(project?.images.length)
     return (
         <div className="sProject">
             <div className="sProject__container">

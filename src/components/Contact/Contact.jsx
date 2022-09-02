@@ -7,6 +7,8 @@ import './Contact.scss'
 
 const Contact = () => {
     const [done, setDone] = useState(false)
+    const [errorMsg, setErrorMsg] = useState(null)
+    const [successMsg, setSuccessMsg] = useState(null)
     const theme = useContext(ThemeContext)
     const darkMode = theme.state.darkMode
     const formRef = useRef()
@@ -23,11 +25,12 @@ const Contact = () => {
             )
             .then(
                 (result) => {
+                    setSuccessMsg(result.text)
                     console.log(result.text)
                     setDone(true)
                 },
                 (error) => {
-                    console.log(error.text)
+                    setErrorMsg(error.text)
                 }
             )
     }

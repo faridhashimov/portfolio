@@ -21,13 +21,10 @@ const Projects = () => {
                     setAllProjects(null)
                     setErrMsg(true)
                     setLoading(false)
-                    console.log(err.message)
                 })
         }
         getProjects('http://localhost:5000/api')
     }, [])
-
-    // console.log(loading)
 
     const projects =
         !errMsg &&
