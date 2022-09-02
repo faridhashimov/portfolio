@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "heroku-postbuild": "cd .. && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd .. && npm install && npm run build"
   },
   "author": "Farid Hashimov",
   "license": "ISC",
