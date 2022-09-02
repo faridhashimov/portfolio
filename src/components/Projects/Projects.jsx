@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Project, ProjectsSkeleton } from '../../components'
+import { baseURL } from '../../config'
 
 import './Projects.scss'
 
@@ -23,7 +24,7 @@ const Projects = () => {
                     setLoading(false)
                 })
         }
-        getProjects('http://localhost:5000/api')
+        getProjects(baseURL)
     }, [])
 
     const projects =

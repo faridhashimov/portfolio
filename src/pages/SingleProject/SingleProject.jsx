@@ -8,6 +8,7 @@ import { FiSun } from 'react-icons/fi'
 import { useParams } from 'react-router-dom'
 import Slider from '../../components/Slider/Slider'
 import SingleProjectSkeleton from '../../components/Skeleton/SingleProjectSkeleton'
+import { baseURL } from '../../config'
 
 const SingleProject = () => {
     const [project, setProject] = useState(null)
@@ -39,7 +40,7 @@ const SingleProject = () => {
                     setLoading(false)
                 })
         }
-        getProjects('http://localhost:5000/api/' + id)
+        getProjects(`${baseURL}/api/` + id)
     }, [id])
 
     const onToggleMode = () => {
@@ -77,7 +78,9 @@ const SingleProject = () => {
                 ) : loading ? (
                     <SingleProjectSkeleton />
                 ) : (
-                    <div className='error'>Something went wrong... Please try later</div>
+                    <div className="error">
+                        Something went wrong... Please try later
+                    </div>
                 )}
             </div>
             <Contact />
