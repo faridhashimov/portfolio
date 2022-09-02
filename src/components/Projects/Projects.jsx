@@ -24,7 +24,7 @@ const Projects = () => {
                     setLoading(false)
                 })
         }
-        getProjects(baseURL)
+        getProjects(`${baseURL}/api`)
     }, [])
 
     const projects =
