@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../src/scss/responsive';
 
 .main-title {
     font-size: 32px;
@@ -9,4 +10,7 @@
     font-size: 22px;
     color: $powder-blue;
     font-weight: 400;
+    @include mobile {
+        font-size: 18px;
+    }
 }

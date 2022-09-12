@@ -3,38 +3,43 @@
 
 .about {
     height: 650px;
-    margin-top: 40px;
+    padding: 40px 0px;
 
     @include mobile {
-        height: 650px;
+        height: 730px;
+        padding: 50px 0px;
     }
 
     &__container {
         width: $container-width;
         height: $container-height;
         margin: 0 auto;
-        padding: 20px;
+        padding: 0px 20px;
         display: flex;
 
         @include mobile {
+            width: 100%;
             flex-direction: column;
         }
 
-       .about__info {
+        .about__info {
             flex: 2;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             font-weight: 400;
-            padding: 50px 20px 0 0;
+            padding: 0px 20px 0 0;
+
+            h1 {
+                margin-bottom: 10px;
+            }
 
             @include mobile {
-                margin-bottom: 20px;
+                padding: 0px;
             }
 
             &--desc {
                 font-size: 20px;
-                
 
                 @include mobile {
                     font-size: 16px;
@@ -49,11 +54,16 @@
                 box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
                 position: relative;
 
+                @include mobile {
+                    font-size: 16px;
+                    display: none;
+                }
+
                 .contacts__container {
                     position: absolute;
-                    bottom: -35px;
+                    bottom: -50px;
                     left: 25%;
-                    height: 70px;
+                    height: 100px;
                     width: 50%;
                     background-color: rgba(168, 218, 220, 0.7);
                     box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
@@ -65,8 +75,18 @@
                     justify-content: space-between;
                     color: #1d3557;
 
-                    span {
+                    li {
                         font-weight: 600;
+                        display: flex;
+                        align-items: center;
+
+                        svg {
+                            margin-right: 5px;
+                        }
+
+                        a {
+                            color: inherit;
+                        }
                     }
                 }
 
@@ -82,16 +102,22 @@
             padding-top: 120px;
             position: relative;
 
+            @include mobile {
+                padding-top: 20px;
+            }
+
             &__wrapper {
                 height: 60%;
                 z-index: 1000;
                 border-radius: 10px;
                 overflow: hidden;
-                background-color: $powder-blue;
+                background-color: rgba(168, 218, 220, 0.7);
                 box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 
                 @include mobile {
-                    height: 140px;
+                    height: 170px;
+                    width: 100%;
+                    display: flex
                 }
 
                 img {
@@ -99,6 +125,34 @@
 
                     @include mobile {
                         height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                .mobile__contacts {
+                    display: none;
+
+                    @include mobile {
+                        display: block;
+                        align-self: center;
+                        margin-left: 10px;
+
+                        li {
+                            font-size: 12px;
+                            font-weight: 500;
+                            padding: 2px 0px;
+                            color: #232323;
+                            display: flex;
+                            align-items: center;
+
+                            svg {
+                                margin-right: 4px;
+                            }
+
+                            a {
+                                color: inherit;
+                            }
+                        }
                     }
                 }
             }

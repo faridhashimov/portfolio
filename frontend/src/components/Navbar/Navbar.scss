@@ -16,6 +16,10 @@
         align-items: center;
         padding: 20px;
 
+        @include mobile {
+            padding: 20px 0px;
+        }
+
         &__logo {
             height: 40px;
             width: 40px;
@@ -49,6 +53,7 @@
 
             a.light {
                 color: #fff;
+
                 &:hover {
                     background-color: $celadon-blue;
                     color: #fff;
@@ -58,6 +63,7 @@
 
             a.dark {
                 color: #222;
+
                 &:hover {
                     background-color: $celadon-blue;
                     color: #fff;
@@ -73,49 +79,111 @@
                 &:hover {
                     background-color: $celadon-blue;
                     opacity: .7;
-
                 }
-
             }
-
         }
 
-        &__darkmode {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
+        .toggle-icons {
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid $powder-blue;
-            background-color: transparent;
-            transition: all 0.2s ease-in;
-            cursor: pointer;
 
-            &:hover {
-                box-shadow: 0px 0px 1px 5px $honeydew;
-                transition: $transition;
+            .darkmode {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $powder-blue;
+                background-color: transparent;
+                transition: all 0.2s ease-in;
+                cursor: pointer;
+                align-self: flex-end;
+
+                &:hover {
+                    box-shadow: 0px 0px 1px 5px $honeydew;
+                    transition: $transition;
+                }
             }
 
+            .lightmode {
+                @extend .darkmode;
+
+                &:hover {
+                    box-shadow: 0px 0px 1px 5px $prussian-blue;
+                    transition: $transition;
+                }
+            }
+
+            &__openMobile {
+                display: none;
+                margin-left: 40px;
+                font-size: 25px;
+
+                @include mobile {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
         }
 
-        &__lightmode {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid $powder-blue;
-            background-color: transparent;
-            transition: all 0.2s ease-in;
-            cursor: pointer;
+        .mobile-menu {
+            display: none;
+            // position: relative;
+            color: #fff;
 
-            &:hover {
-                box-shadow: 0px 0px 1px 5px $prussian-blue;
-                transition: $transition;
+
+            @include mobile {
+                display: block;
+                position: absolute;
+                height: 100vh;
+                scroll-snap-stop: always;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, .9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
+            &__closeMobile {
+                position: absolute;
+                top: 25px;
+                right: 20px;
+                font-size: 25px;
+
+                svg path {
+                    stroke: #fff;
+                }
+            }
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                &_items {
+                    font-size: 28px;
+                    font-weight: 700;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    a {
+                        color: #fff;
+                        width: 100%;
+                        text-align: center;
+                        padding: 20px 0px;
+                    }
+                }
+            }
         }
 
     }

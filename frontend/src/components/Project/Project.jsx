@@ -14,8 +14,13 @@ const Project = ({ project }) => {
                     >
                         <FiGithub />
                     </a>
-
-                    <FiExternalLink />
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={project.externalLink}
+                    >
+                        <FiExternalLink />
+                    </a>
                 </span>
             </h6>
             <div className="item">
@@ -27,8 +32,8 @@ const Project = ({ project }) => {
                     </div>
                     <div className="item__header_right"></div>
                 </div>
-                <Link to={`/project/${project._id}`}>
-                    <img src={project.mainImg} alt="" />
+                <Link to={`/project/${project._id}/`}>
+                    <img src={project.mainImg} alt={project.title} />
                 </Link>
             </div>
         </div>

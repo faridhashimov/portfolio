@@ -4,6 +4,7 @@ import './Slider.scss'
 
 const Slider = ({ project }) => {
     const [slideIndex, setSlideIndex] = useState(0)
+    const [slideSize, setSlideSize] = useState(896)
 
     const handleClick = useCallback(
         (direction) => {
@@ -19,6 +20,14 @@ const Slider = ({ project }) => {
         },
         [slideIndex, project.length]
     )
+
+    useEffect(() =>{
+        if(window.innerWidth < 500) {
+            setSlideSize(330)
+        } else {
+            setSlideSize(896)
+        }
+    }, [window.innerWidth])
 
     useEffect(() => {
         const infiniteSlider = setInterval(() => handleClick('right'), 3000)
@@ -45,14 +54,17 @@ const Slider = ({ project }) => {
             <div className="slider__container">
                 <div
                     style={{
-                        width: `${project.length * 896}px`,
-                        transform: `translateX(${slideIndex * -896}px)`,
+                        width: `${project.length * slideSize}px`,
+                        transform: `translateX(${slideIndex * -slideSize}px)`,
                     }}
                     className="imageWrapper"
                 >
                     {project.map((item, i) => (
                         <div key={i}>
-                            <img src={item} alt={`img${item}`} />
+                            <img
+                                src={item}
+                                alt={`img_${item.slice(77, 100)}`}
+                            />
                         </div>
                     ))}
                 </div>

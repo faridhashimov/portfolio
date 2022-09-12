@@ -1,12 +1,8 @@
-import './Footer.scss'
 import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
-import { useContext } from 'react'
-import { ThemeContext } from '../../context/themeContext'
+import './Footer.scss'
 
 const Footer = () => {
     const StyledLink = ({ link, children }) => {
-        const theme = useContext(ThemeContext)
-        const darkMode = theme.state.darkMode
 
         return (
             <a href={link} target="_blank" rel="noreferrer">

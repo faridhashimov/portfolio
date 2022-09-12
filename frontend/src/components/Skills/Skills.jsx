@@ -2,7 +2,7 @@ import './Skills.scss'
 
 const Skills = () => {
     return (
-        <div id="skills" className="skills">
+    <div id="skills" className="skills">
             <div className="skills-container">
                 <h1 className="skills-container__title">
                     Here are a few technologies I’ve been working with recently:

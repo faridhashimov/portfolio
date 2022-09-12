@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
-import { FaRegMoon } from 'react-icons/fa'
+import { FaBars, FaRegMoon } from 'react-icons/fa'
+import { GrClose } from 'react-icons/gr'
 import { FiSun } from 'react-icons/fi'
 import { ThemeContext } from '../../context/themeContext'
 import './Navbar.scss'
@@ -7,7 +8,9 @@ import './Navbar.scss'
 const Navbar = () => {
     const [show, setShow] = useState(true)
     const [scrollPos, setScrollPos] = useState(0)
+    const [mobileMenu, setMobileMenu] = useState(false)
     const theme = useContext(ThemeContext)
+
     const darkMode = theme.state.darkMode
     const { dispatch } = useContext(ThemeContext)
 
@@ -21,6 +24,15 @@ const Navbar = () => {
                 {children}
             </a>
         )
+    }
+    const onMobileMenuOpenClick = (opened) => {
+        if (opened) {
+            setMobileMenu(true)
+            document.body.style.overflow = 'hidden'
+        } else {
+            setMobileMenu(false)
+            document.body.style.overflow = 'auto'
+        }
     }
 
     const showy = {
@@ -65,17 +77,58 @@ const Navbar = () => {
                         Resume
                     </a>
                 </nav>
-
-                <div
-                    onClick={onToggleMode}
-                    className={
-                        darkMode
-                            ? 'navbar-container__darkmode'
-                            : 'navbar-container__lightmode'
-                    }
-                >
-                    {darkMode ? <FiSun /> : <FaRegMoon />}
+                <div className="toggle-icons">
+                    <div
+                        onClick={onToggleMode}
+                        className={darkMode ? 'darkmode' : 'lightmode'}
+                    >
+                        {darkMode ? <FiSun /> : <FaRegMoon />}
+                    </div>
+                    {!mobileMenu && (
+                        <div
+                            onClick={() => onMobileMenuOpenClick(true)}
+                            className="toggle-icons__openMobile"
+                        >
+                            <FaBars />
+                        </div>
+                    )}
                 </div>
+                {mobileMenu && (
+                    <div className="mobile-menu">
+                        <div
+                            onClick={() => onMobileMenuOpenClick(false)}
+                            className="mobile-menu__closeMobile"
+                        >
+                            <GrClose />
+                        </div>
+                        <ul className="mobile-menu__list">
+                            <li
+                                onClick={() => onMobileMenuOpenClick(false)}
+                                className="mobile-menu__list_items"
+                            >
+                                <a href="#about">About</a>
+                            </li>
+                            <li
+                                onClick={() => onMobileMenuOpenClick(false)}
+                                className="mobile-menu__list_items"
+                            >
+                                <a href="#skills">Skills</a>
+                            </li>
+                            <li
+                                onClick={() => onMobileMenuOpenClick(false)}
+                                className="mobile-menu__list_items"
+                            >
+                                <a href="#projects">Projects</a>
+                            </li>
+                            <li
+                                onClick={() => onMobileMenuOpenClick(false)}
+                                className="mobile-menu__list_items"
+                            >
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </div>
         </div>
     )

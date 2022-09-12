@@ -2,7 +2,7 @@
 @import '../../scss/responsive';
 
 .intro {
-    height: 570px;
+    height: 650px;
 
     &-container {
         width: $container-width;
@@ -10,6 +10,10 @@
         margin: 0 auto;
         padding: 20px;
         display: flex;
+
+        @include mobile {
+            padding: 0px;
+        }
 
         &__info {
             flex: 1;
