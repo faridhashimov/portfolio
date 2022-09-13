@@ -1,0 +1,163 @@
+@import '../../scss/variables';
+@import '../../scss/responsive';
+
+.about {
+    height: 650px;
+    padding: 40px 0px;
+
+    @include mobile {
+        height: 730px;
+        padding: 50px 0px;
+    }
+
+    &__container {
+        width: $container-width;
+        height: $container-height;
+        margin: 0 auto;
+        padding: 0px 20px;
+        display: flex;
+
+        @include mobile {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .about__info {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-weight: 400;
+            padding: 0px 20px 0 0;
+
+            h1 {
+                margin-bottom: 10px;
+            }
+
+            @include mobile {
+                padding: 0px;
+            }
+
+            &--desc {
+                font-size: 20px;
+
+                @include mobile {
+                    font-size: 16px;
+                }
+            }
+
+            &--contacts {
+                background: no-repeat url('https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B1360%2C893%5D&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F23%2F2021%2F07%2F13%2Fcalming-workspace-at-office-2000.jpg') center center / cover;
+                height: 180px;
+                margin-top: 15px;
+                border-radius: 10px;
+                box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+                position: relative;
+
+                @include mobile {
+                    font-size: 16px;
+                    display: none;
+                }
+
+                .contacts__container {
+                    position: absolute;
+                    bottom: -50px;
+                    left: 25%;
+                    height: 100px;
+                    width: 50%;
+                    background-color: rgba(168, 218, 220, 0.7);
+                    box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    color: #1d3557;
+
+                    li {
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+
+                        svg {
+                            margin-right: 5px;
+                        }
+
+                        a {
+                            color: inherit;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .myImage {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 120px;
+            position: relative;
+
+            @include mobile {
+                padding-top: 20px;
+            }
+
+            &__wrapper {
+                height: 60%;
+                z-index: 1000;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: rgba(168, 218, 220, 0.7);
+                box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25), 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+
+                @include mobile {
+                    height: 170px;
+                    width: 100%;
+                    display: flex
+                }
+
+                img {
+                    height: 110%;
+
+                    @include mobile {
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                .mobile__contacts {
+                    display: none;
+
+                    @include mobile {
+                        display: block;
+                        align-self: center;
+                        margin-left: 10px;
+
+                        li {
+                            font-size: 12px;
+                            font-weight: 500;
+                            padding: 2px 0px;
+                            color: #232323;
+                            display: flex;
+                            align-items: center;
+
+                            svg {
+                                margin-right: 4px;
+                            }
+
+                            a {
+                                color: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+}
