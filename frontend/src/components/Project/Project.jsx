@@ -1,5 +1,6 @@
 import { FiExternalLink, FiGithub } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
+import './Project.scss'
 
 const Project = ({ project }) => {
     return (

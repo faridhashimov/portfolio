@@ -80,7 +80,7 @@ const Navbar = () => {
                 <div className="toggle-icons">
                     <div
                         onClick={onToggleMode}
-                        className={darkMode ? 'darkmode' : 'lightmode'}
+                        className={darkMode ? 'toggle-darkmode' : 'toggle-lightmode'}
                     >
                         {darkMode ? <FiSun /> : <FaRegMoon />}
                     </div>

@@ -8,7 +8,6 @@ import './Contact.scss'
 const Contact = () => {
     const [done, setDone] = useState(false)
     const [errorMsg, setErrorMsg] = useState(null)
-    const [successMsg, setSuccessMsg] = useState(null)
     const theme = useContext(ThemeContext)
     const darkMode = theme.state.darkMode
     const formRef = useRef()
@@ -25,12 +24,11 @@ const Contact = () => {
             )
             .then(
                 (result) => {
-                    setSuccessMsg(result.text)
-                    console.log(result.text)
                     setDone(true)
                 },
                 (error) => {
                     setErrorMsg(error.text)
+                    console.log(error.text)
                 }
             )
     }
@@ -42,7 +40,9 @@ const Contact = () => {
                 <h3 className="secondary-title">Lets Work Together</h3>
                 <div className="form-wrapper">
                     {done ? (
-                        <Success />
+                        <Success status={'success'} />
+                    ) : errorMsg ? (
+                        <Success status={'error'} />
                     ) : (
                         <form ref={formRef} onSubmit={onSendMessage}>
                             <input

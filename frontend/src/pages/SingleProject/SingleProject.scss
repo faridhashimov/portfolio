@@ -51,15 +51,9 @@
             align-items: center;
             width: 100%;
 
-            @include mobile {
-                // width: 80%;
-            }
-
             &__title {
                 margin-bottom: 20px;
             }
-
-
 
             &__desc {
                 width: 70%;
@@ -67,6 +61,10 @@
 
                 @include mobile {
                     width: 90%;
+                }
+
+                @include monitor {
+                    width: 896px;
                 }
 
                 div {

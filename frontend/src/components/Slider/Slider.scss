@@ -10,6 +10,10 @@
         width: 330px;
     }
 
+    @include monitor {
+        width: 896px;
+    }
+
     %arrow {
         height: 40px;
         width: 40px;

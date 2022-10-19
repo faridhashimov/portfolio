@@ -1,14 +1,16 @@
 import { useContext, useEffect, useState } from 'react'
 import { FaRegMoon } from 'react-icons/fa'
-
-import { Contact, Footer } from '../../components'
-import './SingleProject.scss'
-import { ThemeContext } from '../../context/themeContext'
 import { FiSun } from 'react-icons/fi'
+import { ThemeContext } from '../../context/themeContext'
 import { useParams } from 'react-router-dom'
-import Slider from '../../components/Slider/Slider'
-import SingleProjectSkeleton from '../../components/Skeleton/SingleProjectSkeleton'
+import {
+    Slider,
+    SingleProjectSkeleton,
+    Contact,
+    Footer,
+} from '../../components'
 import { baseURL } from '../../config'
+import './SingleProject.scss'
 
 const SingleProject = () => {
     const [project, setProject] = useState(null)
@@ -51,6 +53,8 @@ const SingleProject = () => {
         return <div dangerouslySetInnerHTML={{ __html: project.desc }} />
     }
 
+    console.log(darkMode)
+
     return (
         <div className="sProject">
             <div className="sProject__container">
@@ -61,9 +65,7 @@ const SingleProject = () => {
                     <div
                         onClick={onToggleMode}
                         className={
-                            darkMode
-                                ? 'navbar-container__darkmode'
-                                : 'navbar-container__lightmode'
+                            darkMode ? 'toggle-darkmode' : 'toggle-lightmode'
                         }
                     >
                         {darkMode ? <FiSun /> : <FaRegMoon />}

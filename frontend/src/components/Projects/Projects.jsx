@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Project, ProjectsSkeleton } from '../../components'
 import { baseURL } from '../../config'
-
 import './Projects.scss'
 
 const Projects = () => {

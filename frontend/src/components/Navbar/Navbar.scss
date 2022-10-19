@@ -17,7 +17,7 @@
         padding: 20px;
 
         @include mobile {
-            padding: 20px 0px;
+            width: 100%;
         }
 
         &__logo {
@@ -88,34 +88,6 @@
             justify-content: center;
             align-items: center;
 
-            .darkmode {
-                height: 40px;
-                width: 40px;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 1px solid $powder-blue;
-                background-color: transparent;
-                transition: all 0.2s ease-in;
-                cursor: pointer;
-                align-self: flex-end;
-
-                &:hover {
-                    box-shadow: 0px 0px 1px 5px $honeydew;
-                    transition: $transition;
-                }
-            }
-
-            .lightmode {
-                @extend .darkmode;
-
-                &:hover {
-                    box-shadow: 0px 0px 1px 5px $prussian-blue;
-                    transition: $transition;
-                }
-            }
-
             &__openMobile {
                 display: none;
                 margin-left: 40px;
@@ -131,7 +103,6 @@
 
         .mobile-menu {
             display: none;
-            // position: relative;
             color: #fff;
 
 
