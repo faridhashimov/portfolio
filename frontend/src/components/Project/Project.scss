@@ -4,10 +4,6 @@
     height: 370px;
     margin-bottom: 40px;
 
-    &:nth-child(3) {
-        height: 363px;
-    }
-
     @include mobile {
         margin-bottom: 15px;
         height: 45vh;
