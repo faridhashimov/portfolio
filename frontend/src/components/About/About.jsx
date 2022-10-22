@@ -16,8 +16,8 @@ const About = () => {
                         creating accessible, user-friendly websites and web
                         applications. <br />
                         My skills include HTML, CSS (SASS), Javascript (ES6),
-                        React, Typescript, Next, Node.js, Express, Mongodb,
-                        Mongoose, Tailwind Redux, Git, Github, Heroku. However,
+                        React, Typescript, Node.js, Express, Mongodb,
+                        Mongoose, Tailwind, Redux, RTK Query, Webpack, Git, Github, Heroku. However,
                         I am constantly learning and open to new technologies.
                         If you think I'm a good fit for your team, feel free to
                         contact me so we can chat.

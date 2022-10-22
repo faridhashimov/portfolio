@@ -2,7 +2,7 @@ import './Skills.scss'
 
 const Skills = () => {
     return (
-    <div id="skills" className="skills">
+        <div id="skills" className="skills">
             <div className="skills-container">
                 <h1 className="skills-container__title">
                     Here are a few technologies I’ve been working with recently:
@@ -18,7 +18,7 @@ const Skills = () => {
                     <li>Express</li>
                     <li>Sass</li>
                     <li>CSS</li>
-                    <li>Next.js</li>
+                    <li>Webpack</li>
                     <li>Git</li>
                     <li>Redux</li>
                     <li>Github</li>
@@ -51,9 +51,6 @@ const Skills = () => {
                             <i className="devicon-express-original colored"></i>
                         </li>
                         <li>
-                            <i className="devicon-nextjs-line colored"></i>
-                        </li>
-                        <li>
                             <i className="devicon-tailwindcss-plain colored"></i>
                         </li>
                         <li>
@@ -67,6 +64,9 @@ const Skills = () => {
                         </li>
                         <li>
                             <i className="devicon-git-plain colored"></i>
+                        </li>
+                        <li>
+                            <i class="devicon-webpack-plain colored"></i>
                         </li>
                     </ul>
                 </div>
