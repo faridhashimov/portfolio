@@ -53,8 +53,6 @@ const SingleProject = () => {
         return <div dangerouslySetInnerHTML={{ __html: project.desc }} />
     }
 
-    console.log(darkMode)
-
     return (
         <div className="sProject">
             <div className="sProject__container">

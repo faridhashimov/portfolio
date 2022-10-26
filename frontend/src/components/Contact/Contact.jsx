@@ -28,7 +28,6 @@ const Contact = () => {
                 },
                 (error) => {
                     setErrorMsg(error.text)
-                    console.log(error.text)
                 }
             )
     }
