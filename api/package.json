@@ -1,9 +1,6 @@
 {
   "name": "portfolio_api",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.13.2"
-  },
   "description": "",
   "main": "index.js",
   "scripts": {
