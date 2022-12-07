@@ -66,7 +66,7 @@ const Skills = () => {
                             <i className="devicon-git-plain colored"></i>
                         </li>
                         <li>
-                            <i class="devicon-webpack-plain colored"></i>
+                            <i className="devicon-webpack-plain colored"></i>
                         </li>
                     </ul>
                 </div>
