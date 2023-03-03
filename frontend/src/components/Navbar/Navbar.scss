@@ -36,7 +36,7 @@
         &__list {
             display: flex;
             justify-content: space-between;
-            width: 40%;
+            // width: 40%;
 
             @include mobile {
                 display: none;

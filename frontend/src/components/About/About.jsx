@@ -3,7 +3,6 @@ import me from '../../images/Me.png'
 import { AiOutlineMail, AiFillGithub, AiOutlineMobile } from 'react-icons/ai'
 
 const About = () => {
-
     return (
         <div id="about" className="about">
             <div className="about__container">
@@ -16,11 +15,11 @@ const About = () => {
                         creating accessible, user-friendly websites and web
                         applications. <br />
                         My skills include HTML, CSS (SASS), Javascript (ES6),
-                        React, Typescript, Node.js, Express, Mongodb,
-                        Mongoose, Tailwind, Redux, RTK Query, Webpack, Git, Github, Heroku. However,
-                        I am constantly learning and open to new technologies.
-                        If you think I'm a good fit for your team, feel free to
-                        contact me so we can chat.
+                        React, Typescript, Node.js, Express, Mongodb, Mongoose,
+                        Tailwind, Redux, RTK Query, Webpack, Git, Github,
+                        Heroku. However, I am constantly learning and open to
+                        new technologies. If you think I'm a good fit for your
+                        team, feel free to contact me so we can chat.
                     </p>
                     <div className="about__info--contacts">
                         <ul className="contacts__container">
@@ -40,10 +39,10 @@ const About = () => {
                                     github.com/faridhashimov
                                 </a>
                             </li>
-                            <li>
+                            {/* <li>
                                 <AiOutlineMobile />
                                 <a href="tel:+79257904190"> +7 925 790 41 90</a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
@@ -52,7 +51,10 @@ const About = () => {
                         <img src={me} alt="Portfolio" />
                         <ul className="mobile__contacts">
                             <li>
-                                <AiOutlineMail /> faridhashimov@outlook.com
+                                <AiOutlineMail />
+                                <a href="mailto:faridhashimov@outlook.com">
+                                    faridhashimov@outlook.com
+                                </a>
                             </li>
                             <li>
                                 <AiFillGithub />
@@ -64,10 +66,10 @@ const About = () => {
                                     github.com/faridhashimov
                                 </a>
                             </li>
-                            <li>
+                            {/* <li>
                                 <AiOutlineMobile />
                                 +7 (925) 790-41-90
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

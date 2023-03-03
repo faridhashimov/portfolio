@@ -63,7 +63,7 @@ const Navbar = () => {
                     <StyledLink link={'#skills'}>Skills</StyledLink>
                     <StyledLink link={'#projects'}>Projects</StyledLink>
                     <StyledLink link={'#contact'}>Contact</StyledLink>
-                    <a
+                    {/* <a
                         style={{
                             color: darkMode ? 'white' : '#A8DADC',
                             borderColor: darkMode ? 'white' : '#A8DADC',
@@ -75,7 +75,7 @@ const Navbar = () => {
                         href={process.env.PUBLIC_URL + '/Resume.pdf'}
                     >
                         Resume
-                    </a>
+                    </a> */}
                 </nav>
                 <div className="toggle-icons">
                     <div

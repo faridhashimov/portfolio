@@ -25,7 +25,7 @@ const Footer = () => {
                         </StyledLink>
                     </li>
                     <li>
-                        <StyledLink link={'https://youtube.com'}>
+                        <StyledLink link={'https://youtube.com/@faridhashimov1'}>
                             <FaYoutube color="#FF0000" />
                         </StyledLink>
                     </li>
