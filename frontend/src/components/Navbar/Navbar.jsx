@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect, useRef } from 'react'
 import { FaBars, FaRegMoon } from 'react-icons/fa'
 import { GrClose } from 'react-icons/gr'
 import { FiSun } from 'react-icons/fi'
@@ -7,49 +7,47 @@ import './Navbar.scss'
 
 const Navbar = () => {
     const [show, setShow] = useState(true)
-    const [scrollPos, setScrollPos] = useState(0)
     const [mobileMenu, setMobileMenu] = useState(false)
-    const theme = useContext(ThemeContext)
-
-    const darkMode = theme.state.darkMode
-    const { dispatch } = useContext(ThemeContext)
+    const {
+        state: { darkMode },
+        dispatch,
+    } = useContext(ThemeContext)
+    const scrollPos = useRef(0)
 
     const onToggleMode = () => {
         dispatch({ type: 'TOGGLE' })
     }
 
-    const StyledLink = ({ link, children }) => {
-        return (
-            <a className={darkMode ? 'light' : 'dark'} href={link}>
-                {children}
-            </a>
-        )
-    }
+    const StyledLink = ({ link, children }) => (
+        <a className={darkMode ? 'light' : 'dark'} href={link}>
+            {children}
+        </a>
+    )
+
     const onMobileMenuOpenClick = (opened) => {
-        if (opened) {
-            setMobileMenu(true)
-            document.body.style.overflow = 'hidden'
-        } else {
-            setMobileMenu(false)
-            document.body.style.overflow = 'auto'
-        }
-    }
-
-    const showy = {
-        backdropFilter: scrollPos < -80 && 'blur(8px) saturate(180%)',
-        backgroundColor: darkMode
-            ? 'rgba(29, 53, 87, 0.75)'
-            : 'rgba(255, 245, 238, 0.75)',
-    }
-
-    window.onscroll = function (e) {
-        handleScroll()
+        setMobileMenu(opened)
+        document.body.style.overflow = opened ? 'hidden' : 'auto'
     }
 
     const handleScroll = () => {
-        setScrollPos(document.body.getBoundingClientRect().top)
+        const currentScrollPos = document.body.getBoundingClientRect().top
+        setShow(currentScrollPos > scrollPos.current)
+        scrollPos.current = currentScrollPos
+    }
 
-        setShow(document.body.getBoundingClientRect().top > scrollPos)
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    const showy = {
+        backdropFilter:
+            scrollPos.current < -80 ? 'blur(8px) saturate(180%)' : undefined,
+        backgroundColor: darkMode
+            ? 'rgba(29, 53, 87, 0.75)'
+            : 'rgba(255, 245, 238, 0.75)',
     }
 
     return (
@@ -59,28 +57,17 @@ const Navbar = () => {
                     fh
                 </a>
                 <nav className="navbar-container__list">
-                    <StyledLink link={'#about'}>About</StyledLink>
-                    <StyledLink link={'#skills'}>Skills</StyledLink>
-                    <StyledLink link={'#projects'}>Projects</StyledLink>
-                    <StyledLink link={'#contact'}>Contact</StyledLink>
-                    {/* <a
-                        style={{
-                            color: darkMode ? 'white' : '#A8DADC',
-                            borderColor: darkMode ? 'white' : '#A8DADC',
-                        }}
-                        className="resume"
-                        target="_blank"
-                        rel="noreferrer"
-                        // download
-                        href={process.env.PUBLIC_URL + '/Resume.pdf'}
-                    >
-                        Resume
-                    </a> */}
+                    <StyledLink link="#about">About</StyledLink>
+                    <StyledLink link="#skills">Skills</StyledLink>
+                    <StyledLink link="#projects">Projects</StyledLink>
+                    <StyledLink link="#contact">Contact</StyledLink>
                 </nav>
                 <div className="toggle-icons">
                     <div
                         onClick={onToggleMode}
-                        className={darkMode ? 'toggle-darkmode' : 'toggle-lightmode'}
+                        className={
+                            darkMode ? 'toggle-darkmode' : 'toggle-lightmode'
+                        }
                     >
                         {darkMode ? <FiSun /> : <FaRegMoon />}
                     </div>
